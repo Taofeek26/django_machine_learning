@@ -3,7 +3,7 @@ import pandas as pd
 #import matplotlib.pyplot as plt
 #import seaborn as sns
 import pickle
-#% matplotlibinline
+#%matplotlibinline
 
 df = pd.read_csv('results.csv')
 
@@ -204,7 +204,8 @@ for session in sessions:
                 s = len(l)
                 gf.append(s)
             else:
-                gf.append(0)
+                s = len(l)
+                gf.append(s)
         gf.insert(0, 0)
         gf.pop()
         return gf
@@ -227,7 +228,8 @@ for session in sessions:
                 s = len(l)
                 gf.append(s)
             else:
-                gf.append(0)
+                s = len(l)
+                gf.append(s)
         gf.insert(0, 0)
         gf.pop()
         return gf
@@ -250,7 +252,8 @@ for session in sessions:
                 s = len(l)
                 gf.append(s)
             else:
-                gf.append(0)
+                s = len(l)
+                gf.append(s)
         gf.insert(0, 0)
         gf.pop()
         return gf
@@ -324,5 +327,5 @@ file = "TeamPredictions.sav"
 pickle.dump(logmodel, open(file, 'wb'))
 
 predictions = logmodel.predict(X_test)
-print(Team)
+
 print(classification_report(y_test,predictions))
